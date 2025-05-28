@@ -1,7 +1,5 @@
 ---
 import Github from "../assets/github.svg";
-import Linkedin from "../assets/linkedin.svg";
-import Twitter from "../assets/twitter.svg";
 import Instagram from "../assets/instagram.svg";
 import Whatssap from "../assets/whatsapp.svg"
 const socialLinks = [
@@ -36,6 +34,7 @@ const socialLinks = [
             <a
               href={href}
               target="_blank"
+              aria-label={alt}
               class="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] social-hover reveal-up"
             >
               <Icon fill="white" class="icon-hover" />

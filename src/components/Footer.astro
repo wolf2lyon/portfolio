@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+import Logo from "../assets/logo.svg"
 
 const sitemap = [
   {
@@ -90,8 +91,8 @@ const socials = [
       </div>
     </div>
     <div class="flex items-center justify-between pt-10 mb-8">
-      <a href="" class="logo reveal-up">
-        <img src="/src/assets/logo.svg" width={40} height={40} alt="Logo" />
+      <a href="/#" class="logo reveal-up" aria-label="logo">
+        <Logo width={40} height={40}/>
       </a>
       <p class="text-zinc-500 text-sm reveal-up">
         &copy; 2025 <span class="text-zinc-200"> wolf2lyon</span>
