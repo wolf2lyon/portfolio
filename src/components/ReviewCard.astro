@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+
+Image;
 interface Props {
   content: string;
   name: string;
-  imgSrc: string;
+  imgSrc: ImageMetadata;
   company: string;
   classes?: string;
 }
@@ -35,7 +38,7 @@ ratings.fill({
   </p>
   <div class="flex items-center gap-2 mt-auto">
     <figure class="img-box rounded-lg">
-      <img
+      <Image
         src={imgSrc}
         alt={name}
         width={44}
