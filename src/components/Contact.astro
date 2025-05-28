@@ -1,0 +1,92 @@
+---
+import Github from "../assets/github.svg";
+import Linkedin from "../assets/linkedin.svg";
+import Twitter from "../assets/twitter.svg";
+import Instagram from "../assets/instagram.svg";
+import Whatssap from "../assets/whatsapp.svg"
+const socialLinks = [
+  {
+    href: "https://github.com/wolf2lyon",
+    icon: Github,
+    alt: "GitHub",
+  },
+  {
+    href: "https://wa.me/51955422889",
+    icon: Whatssap,
+    alt: "Whatssap",
+  },
+  {
+    href: "https://www.instagram.com/codewithsadee",
+    icon: Instagram,
+    alt: "Instagram",
+  },
+];
+---
+
+<section id="contact" class="section">
+  <div class="container lg:grid lg:grid-cols-2 lg:items-stretch">
+    <div class="mb-12 lg:mb-0 lg:flex lg:flex-col">
+      <h2 class="headline-2 lg:max-w-[12ch] reveal-up">Contáctame para colaborar</h2>
+      <p class="text-zinc-400 mt-3 mb-8 max-w-[50ch] lg:max-w-[30ch] reveal-up">
+        ¡Contáctame hoy para hablar sobre las necesidades de tu proyecto y empezar a colaborar en algo increíble!
+      </p>
+      <div class="flex items-center gap-2 mt-auto">
+        {
+          socialLinks.map(({ href, icon: Icon, alt }) => (
+            <a
+              href={href}
+              target="_blank"
+              class="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] social-hover reveal-up"
+            >
+              <Icon fill="white" class="icon-hover" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <form
+      action="https://getform.io/f/awnwnddb"
+      class="xl:pl-10 2xl:pl-20"
+      method="post"
+    >
+      <div class="md:grid md:items-center md:grid-cols-2 md:gap-2">
+        <div class="mb-4">
+          <label for="name" class="label reveal-up"> Nombre </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            autocomplete="name"
+            required
+            placeholder="Nombre"
+            class="text-field reveal-up"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="label reveal-up"> Correo </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            required
+            placeholder="correo@ejemplo.com"
+            class="text-field reveal-up"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="message" class="label reveal-up">Mensaje</label>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Mensaje"
+          required
+          class="text-field resize-y min-h-32 max-h-80 reveal-up"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit cursor-pointer reveal-up">Enviar</button>
+    </form>
+  </div>
+</section>

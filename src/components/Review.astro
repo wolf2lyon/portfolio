@@ -1,0 +1,84 @@
+---
+import ReviewCard from "./ReviewCard.astro";
+
+const reviews = [
+  {
+    content:
+      "¡Desarrollo web excepcional! Entregó un sitio web impecable y responsivo con código limpio y una excelente experiencia de usuario.",
+    name: "Sophia Ramirez",
+    imgSrc: "/src/assets/people-1.jpg",
+    company: "PixelForge",
+  },
+  {
+    content:
+      "¡Excelente trabajo! Carga rápida, diseño intuitivo. ¡Muy recomendable!.",
+    name: "Ethan Caldwell",
+    imgSrc: "/src/assets/people-2.jpg",
+    company: "NexaWave",
+  },
+  {
+    content:
+      "¡Un desarrollador excepcional! Creó un sitio web robusto con una funcionalidad perfecta. Eficiente y detallista.",
+    name: "Liam Bennett",
+    imgSrc: "/src/assets/people-3.jpg",
+    company: "CodeCraft",
+  },
+  {
+    content:
+      "¡Creativo y hábil! Creó un sitio web moderno e intuitivo que superó las expectativas. Excelente comunicación.",
+    name: "Noah Williams",
+    imgSrc: "/src/assets/people-4.jpg",
+    company: "BrightWeb",
+  },
+  {
+    content:
+      "¡Trabajo profesional! Entrega puntual, con un diseño impecable y una experiencia de usuario fluida. Desarrollador de primer nivel.",
+    name: "Ava Thompson",
+    imgSrc: "/src/assets/people-5.jpg",
+    company: "TechMosaic",
+  },
+  {
+    content:
+      "¡Excelente ejecución del proyecto! Código de alta calidad, diseño responsivo y excepcionales habilidades para la resolución de problemas.",
+    name: "Jonathan",
+    imgSrc: "/src/assets/people-6.jpg",
+    company: "Skyline Digital",
+  },
+];
+---
+
+<section id="reviews" class="section overflow-hidden">
+  <div class="container">
+    <h2 class="headline-2 mb-8 reveal-up">Lo que dicen nuestros clientes</h2>
+    <div class="scrub-slide flex items-stretch gap-3 w-fit">
+      {
+        reviews.map(({ content, name, imgSrc, company }) => (
+          <ReviewCard
+            content={content}
+            name={name}
+            imgSrc={imgSrc}
+            company={company}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.scrub-slide',{
+    scrollTrigger:{
+      trigger:'.scrub-slide',
+      start:'-200% 80%',
+      end:'400% 80%',
+      scrub:true,
+    },
+    x:'-1000'
+  })
+</script>

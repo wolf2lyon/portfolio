@@ -1,0 +1,51 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+const works = [
+  {
+    imgSrc: '/src/assets/project-1.webp',
+    title: 'TailUp',
+    tags: ['HTML', 'CSS', 'Wordpress'],
+    projectLink: 'https://wolf2lyon.github.io/tailup/'
+  },
+  {
+    imgSrc: '/src/assets/project-2.webp',
+    title: 'PetFusion',
+    tags: ['Wordpress', 'Elementor'],
+    projectLink: 'https://wolf2lyon.github.io/petfusion/'
+  },
+  {
+    imgSrc: '/src/assets/project-3.webp',
+    title: 'Fur Friends',
+    tags: ['HTML', 'CSS','JS'],
+    projectLink: 'https://wolf2lyon.github.io/petstore/'
+  },
+  {
+    imgSrc: '/src/assets/project-4.webp',
+    title: 'Rakel Salon Spa',
+    tags: ['Wordpress'],
+    projectLink: 'https://wolf2lyon.github.io/rakelsalonspa/'
+  },
+  {
+    imgSrc: '/src/assets/project-5.webp',
+    title: 'Nova Beauty',
+    tags: ['HTML', 'CSS','Elementor'],
+    projectLink: 'https://wolf2lyon.github.io/novabeauty/'
+  },
+  {
+    imgSrc: '/src/assets/project-6.webp',
+    title: 'Bravura Hair',
+    tags: ['Wordpress', 'Elementor'],
+    projectLink: 'https://wolf2lyon.github.io/bravurahair/'
+  },
+];
+---
+<section id="work" class="section">
+    <div class="container">
+        <h2 class="headline-2 mb-8 reveal-up">
+            Mis proyectos
+        </h2>
+        <div class="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
+            {works.map(({imgSrc,title,tags,projectLink}) => <ProjectCard imgSrc={imgSrc} title={title} tags={tags} projectLink={projectLink} classes=" reveal-up"/> )}
+        </div>
+    </div>
+</section>

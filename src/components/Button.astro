@@ -1,0 +1,51 @@
+---
+interface Props {
+  href?: string;
+  target?: string;
+  label?: string;
+  icon?: string;
+  classes?: string;
+  donwload?: string
+}
+
+const { href, target, label, icon, classes,donwload } = Astro.props;
+---
+
+{
+  href && !donwload && (
+    <a href={href} target={target} class={"btn btn-primary " + classes}>
+      {label}
+      {icon && (
+        <span class="material-symbols-outlined" aria-hidden="true">
+          {icon}
+        </span>
+      )}
+    </a>
+  )
+}
+
+{
+  href && donwload &&(
+    <a href={href} download target={target} class={"btn btn-primary " + classes}>
+      {label}
+      {icon && (
+        <span class="material-symbols-outlined" aria-hidden="true">
+          {icon}
+        </span>
+      )}
+    </a>
+  )
+}
+
+{
+  !href && (
+    <button class={"btn btn-primary cursor-pointer" + classes}>
+      {label}
+      {icon && (
+        <span class="material-symbols-outlined" aria-hidden="true">
+          {icon}
+        </span>
+      )}
+    </button>
+  )
+}

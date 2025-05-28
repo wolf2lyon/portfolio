@@ -1,0 +1,51 @@
+---
+// Navbar.astro
+const navItems = [
+  { label: "Home", link: "#home", className: "nav-link active" },
+  { label: "About", link: "#about", className: "nav-link" },
+  { label: "Work", link: "#work", className: "nav-link" },
+  { label: "Reviews", link: "#reviews", className: "nav-link" },
+  { label: "Contact", link: "#contact", className: "nav-link contact-hidden" },
+];
+
+---
+
+<nav class="navbar">
+  {
+    navItems.map((item) => (
+      <a href={item.link} class={item.className}>
+        {item.label}
+      </a>
+    ))
+  }
+  <div class="active-box"></div>
+</nav>
+
+<script>
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const activeBox = document.querySelector<HTMLAnchorElement>(".active-box");
+  // Asegúrate de que hay al menos un enlace
+  
+  if (navLinks.length === 0) {
+    throw new Error("No nav links found");
+  }
+
+  let lastActiveLink: HTMLAnchorElement = navLinks[0]; // 👈 se evita null
+  const initActiveBox = () => {
+    if (!activeBox || !lastActiveLink) return 
+    activeBox.style.top = lastActiveLink.offsetTop + "px";
+    activeBox.style.left = lastActiveLink.offsetLeft + "px";
+    activeBox.style.width = lastActiveLink.offsetWidth + "px";
+    activeBox.style.height = lastActiveLink.offsetHeight + "px";
+  };
+  initActiveBox()
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      lastActiveLink.classList.remove("active");
+      link.classList.add("active");
+      lastActiveLink = link;
+      initActiveBox()
+    });
+  });
+  window.addEventListener('resize', initActiveBox)
+</script>

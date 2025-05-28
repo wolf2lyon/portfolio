@@ -1,11 +1,50 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skill from "../components/Skill.astro";
+import Work from "../components/Work.astro";
+import Review from "../components/Review.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Skill />
+    <Work />
+    <Review />
+    <Contact />
+    <Footer />
+  </main>
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const elements = gsap.utils.toArray(".reveal-up") as HTMLElement[];
+  elements.forEach((element) => {
+    gsap.to(element, {
+      scrollTrigger: {
+        trigger: element,
+        start: "-200 bottom",
+        end: "bottom 80%",
+        scrub: true,
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
+</script>

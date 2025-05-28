@@ -1,0 +1,37 @@
+---
+interface Props {
+  href?: string;
+  target?: string;
+  label?: string;
+  icon?: string;
+  classes?: string;
+}
+
+const { href, target, label, icon, classes } = Astro.props;
+---
+
+{
+  href && (
+    <a href={href} target={target} class={"btn btn-outline" + classes}>
+      {label}
+      {icon && (
+        <span class="material-symbols-outlined" aria-hidden="true">
+          {icon}
+        </span>
+      )}
+    </a>
+  )
+}
+
+{
+  !href && (
+    <button class={"btn btn-outline cursor-pointer" + classes}>
+      {label}
+      {icon && (
+        <span class="material-symbols-outlined" aria-hidden="true">
+          {icon}
+        </span>
+      )}
+    </button>
+  )
+}
