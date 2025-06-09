@@ -8,22 +8,27 @@ const description =
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  class="scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-500"
->
+<html lang="en" class="scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-500">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Primary Meta Tags -->
-    <title>Wolf2Lyon Dev</title>
+    <title>{title}</title>
     <meta name="title" content={title} />
-    <meta
-      name="description"
-      content="Desarrollo web y aplicaciones a medida para negocios y emprendedores. Sitios modernos, rápidos y a tu medida. ¡Haz crecer tu proyecto con un freelance profesional!"
-    />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href={logo.src} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:locale" content="es_ES" />
@@ -42,66 +47,20 @@ const description =
     <meta name="twitter:site" content="@wolf2lyon" />
     <meta name="twitter:creator" content="@wolf2lyon" />
 
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="shortcut icon" type="image/svg+xml" href={logo.src} />
+
+    <!-- Fonts and Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu_close_download_arrow_downward_arrow_outward_star_chevron_right"
     />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-icon-192x192.png"
-    />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
-
-    <title>Wolf2Lyon Dev</title>
   </head>
   <body>
     <slot />
@@ -109,8 +68,7 @@ const description =
 </html>
 
 <style>
-  html,
-  body {
+  html, body {
     margin: 0;
     padding: 0;
   }
